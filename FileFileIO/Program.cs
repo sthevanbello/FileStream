@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace FileFileIO
 {
@@ -130,32 +131,81 @@ namespace FileFileIO
 
             #region StreamWriter
 
-            string sourcePath = @"D:\Temp\file1.txt";
-            string targetPath = @"D:\Temp\file2.txt";
+            //string sourcePath = @"D:\Temp\file1.txt";
+            //string targetPath = @"D:\Temp\file2.txt";
 
-            try
-            {
-                string[] lines = File.ReadAllLines(sourcePath);
+            //try
+            //{
+            //    string[] lines = File.ReadAllLines(sourcePath);
 
-                //File.WriteAllLines(targetPath, lines);
+            //    //File.WriteAllLines(targetPath, lines);
 
-                using (StreamWriter streamWriter = File.AppendText(targetPath))
-                {
-                    streamWriter.WriteLine("\n");
-                    foreach (string line in lines)
-                    {
-                        streamWriter.WriteLine($"{line.ToUpper()}");
-                    }
-                    
-                    Console.WriteLine("Done!");
-                }
+            //    using (StreamWriter streamWriter = File.AppendText(targetPath))
+            //    {
+            //        streamWriter.WriteLine("\n");
+            //        foreach (string line in lines)
+            //        {
+            //            streamWriter.WriteLine($"{line.ToUpper()}");
+            //        }
 
-            }
-            catch (Exception ex)
-            {
+            //        Console.WriteLine("Done!");
+            //    }
 
-                Console.WriteLine(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    Console.WriteLine(ex.Message);
+            //}
+
+            #endregion
+
+            #region Directory, DirectoryInfo
+
+            //string path = @"d:\temp";
+
+            //try
+            //{
+            //    IEnumerable<string> folders =  Directory.EnumerateDirectories(path, "*.*", SearchOption.AllDirectories);
+            //    Console.WriteLine("Folders: ");
+
+            //    foreach (string item in folders)
+            //    {
+            //        Console.WriteLine(item);
+            //    }
+
+            //    IEnumerable<string> files = Directory.EnumerateFiles(path, "*.*", SearchOption.AllDirectories);
+            //    Console.WriteLine("Files: ");
+
+            //    foreach (string item in files)
+            //    {
+            //        Console.WriteLine(item);
+            //    }
+
+            //    Directory.CreateDirectory($@"{path}\teste");
+
+            //}
+            //catch (IOException ex)
+            //{
+
+            //    Console.WriteLine(ex.Message);
+            //}
+
+            #endregion
+
+            #region Path
+
+            //string path = @"d:\temp\myfolder\file1.txt";
+
+            //Console.WriteLine($"GetDirectoryName: {Path.GetDirectoryName(path)}");
+            //Console.WriteLine($"DirectorySeparatorChar: {Path.DirectorySeparatorChar}");
+            //Console.WriteLine($"PathSeparator: {Path.PathSeparator}");
+            //Console.WriteLine($"GetFileName: {Path.GetFileName(path)}");
+            //Console.WriteLine($"GetFileNameWithoutExtension: {Path.GetFileNameWithoutExtension(path)}");
+            //Console.WriteLine($"GetExtension: {Path.GetExtension(path)}");
+            //Console.WriteLine($"GetFullPath: {Path.GetFullPath(path)}");
+            //Console.WriteLine($"GetTempPath: {Path.GetTempPath()}");
+
 
             #endregion
 
